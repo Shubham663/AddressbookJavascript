@@ -100,9 +100,9 @@ class Contact{
     }
 }
 try{
-    let contact = new Contact("Garvit","Chanana","302/Sector-87","Narvana","Haryana","765 088","91 9878765498","gchanana@gmail.com");
+    let contact = new Contact("Garvit","Chanana","302/Sector-87","Rohtak","Haryana","765 088","91 9878765498","gchanana@gmail.com");
     addressBook.push(contact);
-    let contact2 = new Contact("Kshitij","Malhotra","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
+    let contact2 = new Contact("Kshitij","Malhotra","103/Sector-43","Narvana","Haryana","982343","43 8789878654","ksiMal@gmail.com");
     addressBook.push(contact2);
     let contact3 = new Contact("Kshitij","Khatri","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
     addressBook.push(contact3);
@@ -130,3 +130,15 @@ function countContacts(total,contact){
 let numContacts = addressBook.reduce(countContacts,0);
 console.log("Total number of contacts: " + numContacts);
 console.log(addressBook);
+
+// Method for searching person in city
+if(addressBook.filter(val => val._city == "Rohtak").find(val => val._firstName == "Garvit")!= undefined)
+    console.log("The person Garvit lives in city Rohtak");
+else
+console.log("The person Garvit does not live in city Rohtak");
+
+// Method for searching person in state
+if(addressBook.filter(val => val._state == "Haryana").find(val => val._firstName == "Garvit")!= undefined)
+    console.log("The person Garvit lives in state haryana");
+else
+console.log("The person Garvit does not live in state haryana");
