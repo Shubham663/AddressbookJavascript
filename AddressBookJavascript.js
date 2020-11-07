@@ -1,3 +1,5 @@
+let addressBook = new Array();
+
 class Contact{
     _firstName;
     _lastName;
@@ -96,7 +98,10 @@ class Contact{
 }
 try{
     let contact = new Contact("Garvit","Chanana","302/Sector-87","Narvana","Haryana","765 088","91 9878765498","gchanana@gmail.com");
-    console.log(contact);
+    let contact2 = new Contact("Kshitij","Malhotra","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
+    addressBook.push(contact);
+    addressBook.push(contact2);
 }catch(e){
     console.error(e);
 }
+console.log(addressBook);
