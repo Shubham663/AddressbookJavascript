@@ -117,4 +117,11 @@ let index = addressBook.map(value => value._firstName).indexOf("Kshitij");
 console.log(index);
 addressBook.splice(index,1);
 
+// Getting number of Contacts
+function countContacts(total,contact){
+    return total + 1;
+}
+
+let numContacts = addressBook.reduce(countContacts,0);
+console.log("Total number of contacts: " + numContacts);
 console.log(addressBook);
