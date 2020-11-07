@@ -105,3 +105,11 @@ try{
     console.error(e);
 }
 console.log(addressBook);
+
+// Arrow function for changing details according to _firstName
+addressBook.forEach(value => {
+    if(value._firstName == "Garvit")
+        value.phoneNumber = "63 9869874326";
+});
+
+console.log(addressBook);
