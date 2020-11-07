@@ -112,4 +112,9 @@ addressBook.forEach(value => {
         value.phoneNumber = "63 9869874326";
 });
 
+//Method for deleting contact through name
+let index = addressBook.map(value => value._firstName).indexOf("Kshitij");
+console.log(index);
+addressBook.splice(index,1);
+
 console.log(addressBook);
