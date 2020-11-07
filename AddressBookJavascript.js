@@ -153,3 +153,5 @@ let rohtakContacts = addressBook.filter(val => val._city == "Rohtak");
 let haryanaContacts = addressBook.filter(val => val._state == "Haryana");
 console.log("Contacts in city rohtak: " + rohtakContacts);
 console.log("Contacts in state haryana: " + haryanaContacts);
+console.log("Contacts count in city rohtak: " + rohtakContacts.length);
+console.log("Contacts count in state haryana: " + haryanaContacts.length);
