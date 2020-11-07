@@ -98,6 +98,11 @@ class Contact{
     get email(){
         return this._email;
     }
+
+    toString(){
+        return "first name: " + this._firstName + ", last name: " + this._lastName + ", address: " + this._address + ", city: " + this._city + 
+                ", state: " + this._state + ", zip: " + this._zip + ", phone number: " + this._phoneNumber + ", email: " + this._email;
+    }
 }
 try{
     let contact = new Contact("Garvit","Chanana","302/Sector-87","Rohtak","Haryana","765 088","91 9878765498","gchanana@gmail.com");
@@ -142,3 +147,9 @@ if(addressBook.filter(val => val._state == "Haryana").find(val => val._firstName
     console.log("The person Garvit lives in state haryana");
 else
 console.log("The person Garvit does not live in state haryana");
+
+// Getting persons in city
+let rohtakContacts = addressBook.filter(val => val._city == "Rohtak");
+let haryanaContacts = addressBook.filter(val => val._state == "Haryana");
+console.log("Contacts in city rohtak: " + rohtakContacts);
+console.log("Contacts in state haryana: " + haryanaContacts);
