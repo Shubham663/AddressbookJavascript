@@ -23,9 +23,12 @@ class Contact{
 
     set firstName(firstName){
         const pattern = RegExp("[A-Z]{1}.{2,}");
+        
+        if(  (addressBook.find(val => {return val._firstName == firstName})) != undefined)
+            throw "The first name " + firstName + " already exists in the addressbook";
         if(pattern.test(firstName))
             this._firstName = firstName;
-        else throw "The first name provided is not valid"
+        else throw "The first name provided is not valid";
     }
     get firstName(){
         return this._firstName;
@@ -98,9 +101,11 @@ class Contact{
 }
 try{
     let contact = new Contact("Garvit","Chanana","302/Sector-87","Narvana","Haryana","765 088","91 9878765498","gchanana@gmail.com");
-    let contact2 = new Contact("Kshitij","Malhotra","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
     addressBook.push(contact);
+    let contact2 = new Contact("Kshitij","Malhotra","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
     addressBook.push(contact2);
+    let contact3 = new Contact("Kshitij","Khatri","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
+    addressBook.push(contact3);
 }catch(e){
     console.error(e);
 }
