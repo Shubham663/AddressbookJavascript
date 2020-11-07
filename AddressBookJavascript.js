@@ -105,12 +105,14 @@ class Contact{
     }
 }
 try{
+    let contact4 = new Contact("Mandeep","Khatri","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
+    addressBook.push(contact4);
     let contact = new Contact("Garvit","Chanana","302/Sector-87","Rohtak","Haryana","765 088","91 9878765498","gchanana@gmail.com");
     addressBook.push(contact);
     let contact2 = new Contact("Kshitij","Malhotra","103/Sector-43","Narvana","Haryana","982343","43 8789878654","ksiMal@gmail.com");
     addressBook.push(contact2);
     let contact3 = new Contact("Kshitij","Khatri","103/Sector-43","Rohtak","Haryana","982343","43 8789878654","ksiMal@gmail.com");
-    addressBook.push(contact3);
+    addressBook.push(contact3);    
 }catch(e){
     console.error(e);
 }
@@ -151,7 +153,20 @@ console.log("The person Garvit does not live in state haryana");
 // Getting persons in city
 let rohtakContacts = addressBook.filter(val => val._city == "Rohtak");
 let haryanaContacts = addressBook.filter(val => val._state == "Haryana");
+let copy = addressBook;
 console.log("Contacts in city rohtak: " + rohtakContacts);
 console.log("Contacts in state haryana: " + haryanaContacts);
 console.log("Contacts count in city rohtak: " + rohtakContacts.length);
 console.log("Contacts count in state haryana: " + haryanaContacts.length);
+
+function compare( a, b ) {
+    if ( a._firstName < b._firstName ){
+      return -1;
+    }
+    if ( a._firstName > b._firstName ){
+      return 1;
+    }
+    return 0;
+  }
+addressBook.sort(compare);
+console.log(addressBook);
