@@ -159,7 +159,7 @@ console.log("Contacts in state haryana: " + haryanaContacts);
 console.log("Contacts count in city rohtak: " + rohtakContacts.length);
 console.log("Contacts count in state haryana: " + haryanaContacts.length);
 
-function compare( a, b ) {
+function compareFirstName( a, b ) {
     if ( a._firstName < b._firstName ){
       return -1;
     }
@@ -168,5 +168,38 @@ function compare( a, b ) {
     }
     return 0;
   }
-addressBook.sort(compare);
+  function compareZip( a, b ) {
+    if ( a._zip < b._zip ){
+      return -1;
+    }
+    if ( a._zip > b._zip ){
+      return 1;
+    }
+    return 0;
+  }
+  function compareCity( a, b ) {
+    if ( a._city < b._city ){
+      return -1;
+    }
+    if ( a._city > b._city ){
+      return 1;
+    }
+    return 0;
+  }
+  function compareState( a, b ) {
+    if ( a._state < b._state ){
+      return -1;
+    }
+    if ( a._state > b._state ){
+      return 1;
+    }
+    return 0;
+  }
+addressBook.sort(compareFirstName);
+console.log(addressBook);
+addressBook.sort(compareZip);
+console.log(addressBook);
+addressBook.sort(compareCity);
+console.log(addressBook);
+addressBook.sort(compareState);
 console.log(addressBook);
